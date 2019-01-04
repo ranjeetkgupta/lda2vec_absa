@@ -2,7 +2,7 @@
 __pycache__
 .DS_Store
 GoogleNews-vectors-negative300.bin
-data/*.npy
-data/*.pkl
-data\*.npy
-data\*.pkl
+*/data/*.npy
+*/data/*.pkl
+*\data\*.npy
+*\data\*.pkl
