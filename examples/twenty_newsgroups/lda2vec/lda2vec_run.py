@@ -88,6 +88,7 @@ epoch = 0
 fraction = batchsize * 1.0 / flattened.shape[0]
 progress = shelve.open('progress.shelve')
 for epoch in range(200):
+    print("epoch >>", epoch)
     data = prepare_topics(cuda.to_cpu(model.mixture.weights.W.data).copy(),
                           cuda.to_cpu(model.mixture.factors.W.data).copy(),
                           cuda.to_cpu(model.sampler.W.data).copy(),
@@ -121,6 +122,7 @@ for epoch in range(200):
         rate = batchsize / dt
         logs = dict(loss=float(l), epoch=epoch, j=j,
                     prior=float(prior.data), rate=rate)
-        print msg.format(**logs)
+        #print msg.format(**logs)
         j += 1
+        print(j),
     serializers.save_hdf5("lda2vec.hdf5", model)

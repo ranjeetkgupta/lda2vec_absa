@@ -74,8 +74,8 @@ def prepare_topics(weights, factors, word_vectors, vocab, temperature=1.0,
 
     topic_to_word = np.array(topic_to_word)
     msg = "Not all rows in topic_to_word sum to 1"
-    print("factor_to_word >>", factor_to_word , "/n size .." , factor_to_word.shape)
-    print("topic_to_word >>", topic_to_word , "/n size .." , topic_to_word.shape)
+    # print("factor_to_word >>", factor_to_word , "/n size .." , factor_to_word.shape)
+    # print("topic_to_word >>", topic_to_word , "/n size .." , topic_to_word.shape)
 
 
     assert np.allclose(np.sum(topic_to_word, axis=1), 1), msg
