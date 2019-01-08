@@ -6,3 +6,5 @@ GoogleNews-vectors-negative300.bin
 */data/*.pkl
 *\data\*.npy
 *\data\*.pkl
+examples/twenty_newsgroups/data/*.npy
+examples/twenty_newsgroups/data/*.pkl

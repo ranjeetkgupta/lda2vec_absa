@@ -71,8 +71,13 @@ def prepare_topics(weights, factors, word_vectors, vocab, temperature=1.0,
         factor_to_word = prob_words(factor_vector, word_vectors,
                                     temperature=temperature)
         topic_to_word.append(np.ravel(factor_to_word))
+
     topic_to_word = np.array(topic_to_word)
     msg = "Not all rows in topic_to_word sum to 1"
+    print("factor_to_word >>", factor_to_word , "/n size .." , factor_to_word.shape)
+    print("topic_to_word >>", topic_to_word , "/n size .." , topic_to_word.shape)
+
+
     assert np.allclose(np.sum(topic_to_word, axis=1), 1), msg
     # Collect document-to-topic distributions, e.g. theta
     doc_to_topic = _softmax_2d(weights)

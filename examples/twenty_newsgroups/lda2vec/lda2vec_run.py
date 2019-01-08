@@ -105,7 +105,7 @@ for epoch in range(200):
     for d, f in utils.chunks(batchsize, doc_ids, flattened):
         t0 = time.time()
         #optimizer.zero_grads()
-        optimizer.use_cleargrads(False)
+        #optimizer.use_cleargrads(False)
         #optimizer.model.cleargrads()
         l = model.fit_partial(d.copy(), f.copy())
         prior = model.prior()
