@@ -8,3 +8,5 @@ GoogleNews-vectors-negative300.bin
 *\data\*.pkl
 examples/twenty_newsgroups/data/*.npy
 examples/twenty_newsgroups/data/*.pkl
+examples/twenty_newsgroups/lda2vec/lda2vec.hdf5
+examples/twenty_newsgroups/lda2vec/topics.pyldavis.npz
