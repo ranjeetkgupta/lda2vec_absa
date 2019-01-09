@@ -11,11 +11,26 @@ import numpy as np
 
 from lda2vec import preprocess, Corpus
 
+def absa_data():
+    from xml.dom import minidom
+
+    mydoc = minidom.parse('absa_train.xml')
+    items = mydoc.getElementsByTagName('text')
+    docs = []
+
+    for elem in items:
+        # print(elem.firstChild.data)
+        docs.append(elem.firstChild.data)
+    print(docs)
+
+    return docs
+
 logging.basicConfig()
 
 # Fetch data
 remove = ('headers', 'footers', 'quotes')
-texts = fetch_20newsgroups(subset='train', remove=remove).data
+#texts = fetch_20newsgroups(subset='train', remove=remove).data
+texts = absa_data()
 # Remove tokens with these substrings
 bad = set(["ax>", '`@("', '---', '===', '^^^'])
 

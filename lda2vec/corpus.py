@@ -534,6 +534,8 @@ class Corpus():
         True
         """
         n_words = len(self.compact_to_loose)
+
+        top = top if (top < n_words) else  n_words
         # from gensim.models.word2vec import Word2Vec
         # model = Word2Vec.load_word2vec_format(filename, binary=True)
         import gensim.models.keyedvectors as word2vec
